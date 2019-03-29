@@ -1,0 +1,29 @@
+<!-- largely based on code from the textbook, modified for multiple fields and adapted to this classifier-->
+
+<!doctype html>
+<html>
+    <head>
+        <title>Prediction</title>
+    </head>
+    <body>
+        <div align="center"><strong>Output</strong></div>
+        <div align="center">Price: {{ price }}</div>
+        <div align="center">Maintenance: {{ maint }}</div>
+        <div align="center">Doors: {{ doors }}</div>
+        <div align="center">Passengers: {{ passengers }}</div>
+        <div align="center">Luggage: {{ luggage }}</div>
+        <div align="center">Safety: {{ safety }}</div>
+        <div align="center"><strong>Prediction: {{ prediction }}</strong></div>
+        <div align="center">
+            <ul style="display: inline-block; text-align: left;">
+                <li>unacceptable - 0</li>
+                <li>acceptable - 1</li>
+                <li>good - 2</li>
+                <li>very good - 3</li>
+            </ul>
+        </div>
+        <form action="/">
+            <div align="center"><input type=submit value="Submit another point"></div>
+        </form>
+    </body>
+</html>

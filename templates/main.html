@@ -1,0 +1,82 @@
+<!-- copied from the textbook, modified to include multiple fields as well as explanation of data
+     also cleaned up the page stylistically to make data easier to visualize-->
+
+<!doctype html>
+<html>
+    <head>
+        <title>Main</title>
+    </head>
+    <body>
+        {% from "_formhelpers.html" import render_field %}
+        <div><p align="center"><strong>Input</strong></p></div>
+        <form method=post action="/output">
+            <table align="center">
+                <tr>
+                    <th>Price</th>
+                    <th>Maintenance</th>
+                    <th>Doors</th>
+                    <th>Passengers</th>
+                    <th>Luggage</th>
+                    <th>Safety</th>
+                </tr>
+                <tr>
+                    <td><dl>{{ render_field(form.priceInput) }}</dl></td>
+                    <td><dl>{{ render_field(form.maintainInput) }}</dl></td>
+                    <td><dl>{{ render_field(form.doorsInput) }}</dl></td>
+                    <td><dl>{{ render_field(form.passengersInput) }}</dl></td>
+                    <td><dl>{{ render_field(form.luggageInput) }}</dl></td>
+                    <td><dl>{{ render_field(form.safetyInput) }}</dl></td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>very high - 0</li>
+                            <li>high - 1</li>
+                            <li>medium - 2</li>
+                            <li>low - 3</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>very high - 0</li>
+                            <li>high - 1</li>
+                            <li>medium - 2</li>
+                            <li>low - 3</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>1 to 4</li>
+                            <li>for >4, put 5</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>see doors</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>small - 0</li>
+                            <li>medium - 1</li>
+                            <li>big - 2</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>low - 0</li>
+                            <li>medium - 1</li>
+                            <li>high - 2</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+            <div align="center"><input type="submit" value="Predict" name="submit_btn"></div>
+            <p>This classfier was trained with data from the car data set at https://archive.ics.uci.edu/ml/datasets/Car+Evaluation.
+               It takes six attributes, shown above - initial buying price, maintenance cost, number of doors, passenger capacity,
+               luggage capacity, and overall safety. Based on these six attributes, a car is classified as either unacceptable,
+               acceptable, good, or very good. Strings have been converted to numbers for ease of input, with guides explaining
+               what numbers mean for each feature.</p>
+        </form>
+    </body>
+</html>
